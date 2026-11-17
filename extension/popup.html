@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مانع إعلانات تويتش</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/48.png" alt="" width="32" height="32">
+    <h1>مانع إعلانات تويتش</h1>
+  </header>
+
+  <label class="toggle-row">
+    <span id="status-text">الحماية شغّالة</span>
+    <input type="checkbox" id="enabled-switch" role="switch" checked>
+  </label>
+
+  <section class="counter">
+    <strong id="protected-count">0</strong>
+    <span>بث حميناه من الإعلانات</span>
+  </section>
+
+  <p id="reload-hint" hidden>حدّث صفحة تويتش عشان يتطبّق التغيير</p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

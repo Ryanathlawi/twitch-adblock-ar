@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "مانع إعلانات تويتش",
+  "short_name": "مانع تويتش",
+  "version": "1.0.0",
+  "description": "يمنع إعلانات الفيديو في تويتش (قبل البث وفي نصّه) بدون ما يجمع أي بيانات.",
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://*.twitch.tv/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.twitch.tv/*"
+      ],
+      "js": [
+        "count.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ad-servers",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}

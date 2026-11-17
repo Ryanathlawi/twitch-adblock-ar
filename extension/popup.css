@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 400;
+  src: url(fonts/arabic-400.woff2) format("woff2");
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 700;
+  src: url(fonts/arabic-700.woff2) format("woff2");
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 400;
+  src: url(fonts/latin-400.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+2000-206F;
+}
+@font-face {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 700;
+  src: url(fonts/latin-700.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+2000-206F;
+}
+
+:root {
+  --background: #0b0b0d;
+  --card: #15151a;
+  --accent: #1fae6a;
+  --neon: #7dffc4;
+  --text: #f2f2f4;
+  --muted: #8b8b95;
+}
+
+body {
+  margin: 0;
+  width: 280px;
+  padding: 16px;
+  background: var(--background);
+  color: var(--text);
+  font:
+    14px/1.5 "IBM Plex Sans Arabic",
+    sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: var(--card);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.toggle-row input {
+  appearance: none;
+  width: 42px;
+  height: 24px;
+  margin: 0;
+  border-radius: 12px;
+  background: #2a2a31;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.toggle-row input::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--text);
+  transition: right 0.2s;
+}
+.toggle-row input:checked {
+  background: var(--accent);
+}
+.toggle-row input:checked::after {
+  right: 21px;
+}
+.toggle-row input:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 2px;
+}
+
+.counter {
+  margin-top: 12px;
+  padding: 16px;
+  background: var(--card);
+  border-radius: 12px;
+  text-align: center;
+}
+.counter strong {
+  display: block;
+  font-size: 32px;
+  color: var(--neon);
+}
+.counter span {
+  color: var(--muted);
+}
+
+#reload-hint {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--neon);
+  text-align: center;
+}
