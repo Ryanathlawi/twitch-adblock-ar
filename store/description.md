@@ -37,7 +37,7 @@ https://ryanathlawi.github.io/twitch-adblock-ar/
 - host_permissions (https://*.twitch.tv/*): نحتاجها عشان نشغّل السكربت اللي يمنع الإعلانات في صفحات تويتش بس.
 - storage: نحفظ فيها حالة مفتاح التشغيل وعدّاد البثوث محلياً على الجهاز.
 - scripting: نسجّل سكربت منع الإعلانات أو نلغيه لما المستخدم يشغّل المفتاح أو يطفيه.
-- declarativeNetRequest: نحجب طلبات سيرفرات الإعلانات (amazon-adsystem.com) ومشغّل الإعلانات الجانبي في صفحات تويتش.
+- declarativeNetRequest: نحجب طلبات سيرفرات الإعلانات (amazon-adsystem.com) في صفحات تويتش.
 - الكود البعيد (Remote code): لا، كل الكود داخل الإضافة.
 
 # جمع البيانات
