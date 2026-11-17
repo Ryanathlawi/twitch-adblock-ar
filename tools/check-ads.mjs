@@ -87,6 +87,7 @@ eventHandlers.push(async ({ method, params, sessionId }) => {
 if (withExtension) {
   const loaded = await send('Extensions.loadUnpacked', { path: extensionFolder });
   if (loaded.error) throw new Error(loaded.error.message);
+  await wait(3);
 }
 await send('Target.setAutoAttach', { autoAttach: true, waitForDebuggerOnStart: true, flatten: true });
 
